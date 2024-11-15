@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { FormProvider, useForm } from "react-hook-form";
+import "./App.css";
+import MyForm from "./components/formSubmit";
+import Form from "./components/mainForm";
 
 function App() {
+  const methods = useForm();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FormProvider {...methods}>
+      <div className="container py-4">
+        {/* <Form methods={methods} /> */}
+        {/* <MyForm /> */}
+      </div>
+    </FormProvider>
   );
 }
 
